@@ -1,4 +1,4 @@
-from llm_memory_decay.filters import AntiObsessionFilter, AntiObsessionConfig
+from llm_memory_decay.filters import AntiObsessionConfig, AntiObsessionFilter
 
 
 def make_memories(

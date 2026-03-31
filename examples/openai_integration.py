@@ -6,8 +6,8 @@ into an OpenAI chat completion request.
 """
 from datetime import datetime, timedelta
 
-from llm_memory_decay.integrations.openai import DecayingMemoryManager
 from llm_memory_decay.decay import DecayStrategy
+from llm_memory_decay.integrations.openai import DecayingMemoryManager
 
 # Simulate an OpenAI memory dump (what their system would give you)
 raw_memories = [

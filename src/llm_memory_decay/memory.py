@@ -1,13 +1,13 @@
 from __future__ import annotations
 
+import uuid
 from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Any
-import uuid
 
 from .decay import DecayStrategy, compute_decay_weight
+from .filters import AntiObsessionConfig, AntiObsessionFilter
 from .scoring import ImportanceScorer
-from .filters import AntiObsessionFilter, AntiObsessionConfig
 
 
 @dataclass
@@ -145,4 +145,4 @@ class MemoryStore:
         return len(self._entries)
 
     def __repr__(self) -> str:
-        return f"MemoryStore(entries={len(self._entries)}, strategy={self.decay_strategy})"
+        return f"MemoryStore(entries={len(self._entries)}, strategy={self.decay_strategy.value})"

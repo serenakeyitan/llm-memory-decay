@@ -1,6 +1,6 @@
+import math
 from datetime import datetime
 from enum import Enum
-import math
 
 
 class DecayStrategy(str, Enum):

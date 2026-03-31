@@ -1,13 +1,11 @@
 from datetime import datetime, timedelta
 
-import pytest
-
 from llm_memory_decay.decay import (
+    DecayStrategy,
+    compute_decay_weight,
     exponential_decay,
     linear_decay,
     step_decay,
-    compute_decay_weight,
-    DecayStrategy,
 )
 
 

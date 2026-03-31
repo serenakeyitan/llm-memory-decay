@@ -1,9 +1,7 @@
 from datetime import datetime, timedelta
 
-import pytest
-
-from llm_memory_decay.memory import MemoryStore, MemoryEntry
 from llm_memory_decay.decay import DecayStrategy
+from llm_memory_decay.memory import MemoryStore
 
 
 def make_store(**kwargs) -> MemoryStore:
@@ -19,8 +17,14 @@ def test_add_and_retrieve():
 
 
 def test_weighted_memories_recent_higher():
+    from llm_memory_decay.filters import AntiObsessionConfig
+
     now = datetime.utcnow()
-    store = make_store(decay_strategy=DecayStrategy.EXPONENTIAL, half_life_days=30)
+    store = make_store(
+        decay_strategy=DecayStrategy.EXPONENTIAL,
+        half_life_days=30,
+        anti_obsession=AntiObsessionConfig(min_effective_weight=0.0),
+    )
     store.add("Recent memory", topic="test", created_at=now - timedelta(days=1))
     store.add("Old memory", topic="test2", created_at=now - timedelta(days=60))
 

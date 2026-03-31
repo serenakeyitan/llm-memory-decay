@@ -13,10 +13,10 @@ from __future__ import annotations
 from datetime import datetime
 from typing import Any
 
-from llm_memory_decay.memory import MemoryStore
 from llm_memory_decay.decay import DecayStrategy
 from llm_memory_decay.filters import AntiObsessionConfig
 from llm_memory_decay.formatters import format_for_system_prompt
+from llm_memory_decay.memory import MemoryStore
 
 
 class DecayingMemoryManager:

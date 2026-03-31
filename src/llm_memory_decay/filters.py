@@ -25,7 +25,7 @@ class AntiObsessionFilter:
         for mem in memories:
             w = mem.get("weight", 1.0)
             freq = mem.get("frequency", 1)
-            if freq <= self.config.one_time_query_threshold:
+            if not mem.get("is_pinned") and freq <= self.config.one_time_query_threshold:
                 w *= self.config.one_time_decay_multiplier
                 mem = {**mem, "weight": w, "_one_time_penalized": True}
             filtered.append(mem)

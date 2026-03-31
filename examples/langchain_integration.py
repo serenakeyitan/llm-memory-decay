@@ -6,7 +6,7 @@ Requires: pip install "llm-memory-decay[langchain]"
 Shows how to use DecayingConversationMemory as a drop-in replacement
 for LangChain's built-in ConversationBufferMemory.
 """
-from llm_memory_decay.integrations.langchain import DecayingConversationMemory, LANGCHAIN_AVAILABLE
+from llm_memory_decay.integrations.langchain import LANGCHAIN_AVAILABLE, DecayingConversationMemory
 
 if not LANGCHAIN_AVAILABLE:
     print("LangChain is not installed. Install it with: pip install 'llm-memory-decay[langchain]'")

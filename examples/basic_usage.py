@@ -1,7 +1,7 @@
 """Basic usage of llm-memory-decay."""
 from datetime import datetime, timedelta
 
-from llm_memory_decay import MemoryStore, DecayStrategy
+from llm_memory_decay import DecayStrategy, MemoryStore
 from llm_memory_decay.formatters import format_for_system_prompt
 
 # Create a store with 30-day half-life exponential decay

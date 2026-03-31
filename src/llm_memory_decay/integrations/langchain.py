@@ -9,8 +9,6 @@ Usage:
 """
 from __future__ import annotations
 
-from datetime import datetime
-
 try:
     from langchain.memory.chat_memory import BaseChatMemory
 
@@ -18,10 +16,10 @@ try:
 except ImportError:
     LANGCHAIN_AVAILABLE = False
 
-from llm_memory_decay.memory import MemoryStore
 from llm_memory_decay.decay import DecayStrategy
 from llm_memory_decay.filters import AntiObsessionConfig
 from llm_memory_decay.formatters import format_for_system_prompt
+from llm_memory_decay.memory import MemoryStore
 
 
 class DecayingMemoryMixin:
